@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# Feed Web App Setup
+This package contains the source code for the Feed Social Media Website. 
+
+Since we are using [multiple front-ends](https://docs.amplify.aws/cli/teams/multi-frontend) with our AWS Amplify backend, 
+it is important to follow these steps when setting up this workspace locally.
+
+* Pull from GitHub: `git clone https://github.com/rileycohn/feed-web-app.git`
+* Pull down the AWS Amplify backend: `amplify pull --appId d9lwc08g0lc5p --envName dev`
+    * Do you plan on modifying this backend? `No` - IMPORTANT. 
+    We will only make backend changes in the FeedMobileApp repo.
+* `yarn start`
+* View the website at: `http://localhost:3000/`
+
+# Getting Started with Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
