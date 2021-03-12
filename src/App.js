@@ -7,14 +7,12 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 function App() {
   return (
-    <>
     <div className="app">
       <AmplifySignOut button-text="Sign Out"/>
       <Sidebar/>
       <Feed/>
       <Widgets/>
     </div>
-    </>
   );
 }
 
