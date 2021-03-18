@@ -8,8 +8,8 @@ function formatDate(date) {
     return (
       <img
         className="Avatar"
-        src={props.user.avatarUrl}
-        alt={props.user.name}
+        src={props.avatarUrl}
+        alt={props.name}
       />
     );
   }
@@ -29,7 +29,7 @@ function formatDate(date) {
         <UserInfo user={props.author} />
         <div className="Post-text">{props.text}</div>
         <div className="Post-date">
-          {formatDate(props.date)}
+          {props.date}
         </div>
       </div>
     );
