@@ -19,11 +19,11 @@ function App() {
   }
   let image1={
     image: "https://www.99inspiration.com/wp-content/uploads/2016/01/Beautiful-Landscape-Photography-by-Daniel-Herr-1024x683.jpg",
-    description: 'Blade Runner pic'
+    description: 'Nature pic 1'
   }
   let image2={
     image: "https://th.bing.com/th/id/R629eacd918be613de5bbf4cee057f26e?rik=thlvs8b3gkG5%2fw&riu=http%3a%2f%2fi.ytimg.com%2fvi%2fT9K2zjVaodk%2fmaxresdefault.jpg&ehk=CihWn31YAQrrJGy5Pu2QcZ%2f5s8w5yfNhWANnCfLovPc%3d&risl=&pid=ImgRaw",
-    description: 'Blade Runner pic'
+    description: 'Nature pic 2'
   }
 
 return(
