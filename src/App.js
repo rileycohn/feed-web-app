@@ -6,17 +6,15 @@ import "./App.css";
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 function App() {
-  function reload() {
-    window.location.reload(false);
-  }
   return (
-    //BEM
+    <>
     <div className="app">
       <AmplifySignOut button-text="Sign Out"/>
       <Sidebar/>
       <Feed/>
       <Widgets/>
     </div>
+    </>
   );
 }
 
