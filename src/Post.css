@@ -12,6 +12,7 @@
 
 .post__body > img {
     border-radius: 20px;
+    max-width: 500px;
 }
 
 .post__footer {
@@ -54,4 +55,6 @@
     border-radius: 30px;
     color: var(--twitter-color);
     transition: color 100ms ease-out;
-}
+} 
+
+

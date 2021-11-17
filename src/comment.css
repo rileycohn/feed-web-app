@@ -1,0 +1,16 @@
+.interaction {
+    cursor: pointer;
+}
+
+.interaction:hover {
+    background-color: #e8f5fe;
+    border-radius: 30px;
+    color: var(--twitter-color);
+    transition: color 100ms ease-out;
+} 
+
+.post__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
