@@ -1,4 +1,6 @@
 projects:
+  FeedMobileApp:
+    schemaPath: amplify/backend/api/FeedMobileApp/build/schema.graphql
   deleteme:
     schemaPath: src/graphql/schema.json
     includes:
@@ -10,3 +12,6 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
+        region: us-east-1
+        apiId: null
+        maxDepth: 2
