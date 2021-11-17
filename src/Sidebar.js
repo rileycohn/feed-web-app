@@ -12,23 +12,23 @@ import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Button } from "@material-ui/core";
 import App from "./App";
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 function Sidebar() {
     return (
         <div className="sidebar">
-            {/* Twitter icon */}
-            <TwitterIcon className="sidebar_twitterIcon"/>
-            <SidebarOption active Icon={HomeIcon} text="Home"/>
-            <SidebarOption Icon={SearchIcon} text="Explore"/>
-            <SidebarOption Icon={NotificationsNoneIcon} text="Notifications"/>
-            <SidebarOption Icon={MailOutlineIcon} text="Messages"/>
-            <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks"/>
-            <SidebarOption Icon={ListAltIcon} text="Lists"/>
-            <SidebarOption Icon={PermIdentityIcon} text="Profile"/>
-            <SidebarOption Icon={MoreHorizIcon} text="More"/>
 
-            {/* Button -> Tweet */}
-            <Button variant="outlined" className="sidebar__tweet" fullWidth>Feed</Button>
+            <SidebarOption id="first" active Icon={HomeIcon} text="Home"/>
+            <SidebarOption id="second" Icon={SearchIcon} text="Explore"/>
+            <SidebarOption id="third" Icon={NotificationsNoneIcon} text="Notifications"/>
+            <SidebarOption id="fourth" Icon={MailOutlineIcon} text="Messages"/>
+            <SidebarOption id="fifth" Icon={BookmarkBorderIcon} text="Bookmarks"/>
+            <SidebarOption id="sixth" Icon={ListAltIcon} text="Lists"/>
+            <SidebarOption id="seventh" Icon={PermIdentityIcon} text="Profile"/>
+            <SidebarOption id="eigth" Icon={MoreHorizIcon} text="More"/>
+
+            <AmplifySignOut button-text="Sign Out"/>
+
         </div>
     );
 }
