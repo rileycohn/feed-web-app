@@ -1,6 +1,8 @@
 projects:
   FeedMobileApp:
     schemaPath: amplify/backend/api/FeedMobileApp/build/schema.graphql
+  deleteme:
+    schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
     excludes:
