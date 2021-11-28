@@ -1,6 +1,8 @@
 projects:
   FeedMobileApp:
     schemaPath: amplify/backend/api/FeedMobileApp/build/schema.graphql
+  feed-web-app:
+    schemaPath: amplify/backend/api/FeedMobileApp/build/schema.graphql
   deleteme:
     schemaPath: src/graphql/schema.json
     includes:
@@ -15,3 +17,6 @@ projects:
         region: us-east-1
         apiId: null
         maxDepth: 2
+extensions:
+  amplify:
+    version: 3
