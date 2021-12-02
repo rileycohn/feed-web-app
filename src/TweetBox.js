@@ -12,24 +12,13 @@ import {listPostWithProfileV3} from './graphql/custom_queries';
 
 
 function TweetBox() {
-    // const [posts, setPosts] = useState([]);
-
-    // useEffect(() => {
-    //   fetchPosts();
-    // }, []);
-  
-    // const fetchPosts = async () => {
-    //   try {
-    //     const postData = await API.graphql(graphqlOperation(listPostV3s));
-    //     const postList = postData.data.listPostV3s.items;
-    //     console.log('post list', postList);
-    //     setPosts(postList);
-    //   } catch(error) {
-    //     console.log('error on fetching posts', error);
-    //   }
-    // }
 
     const [postsWithProfile, setPostsWithProfile] = useState([]);
+
+    const [postsToUsername, setPostsToUsername] = useState([]);
+
+    const [postsToAvatar, setPostsToAvatar] = useState([]);
+
 
     useEffect(() => {
       fetchPostsWithProfile();
@@ -40,34 +29,32 @@ function TweetBox() {
         const postDataWithProfile = await API.graphql(graphqlOperation(listPostWithProfileV3));
         console.log("data:",postDataWithProfile.data);
         const postListWithProfile = postDataWithProfile.data.listPostV3s.items;
+        let profileNames = [];
+        let profileAvatars = [];
+        for(let i = 0; i < postListWithProfile.length; i++) {
+
+          const profileNameForPost = await API.graphql(graphqlOperation(getProfileV3, { id: postListWithProfile[i].profileID}));
+          if(profileNameForPost.data && profileNameForPost.data.getProfileV3 && profileNameForPost.data.getProfileV3.name) {
+            profileNames.push(profileNameForPost.data.getProfileV3.name);
+            profileAvatars.push(profileNameForPost.data.getProfileV3.profilePic);
+            console.log("Data ", profileNameForPost.data);
+          }
+          else {
+            profileNames.push("Unknown");
+            profileAvatars.push("https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg");
+          }
+        }
+        
         console.log('post list with profile', postListWithProfile);
         setPostsWithProfile(postListWithProfile);
+        setPostsToUsername(profileNames);
+        setPostsToAvatar(profileAvatars);
       } catch(error) {
         console.log('error on fetching posts with profile', error);
       }
     }
-
-    /** */
-    // const [profile, setProfile] = useState([]);
-
-    // useEffect(() => {
-    //   fetchProfile();
-    // }, []);
-  
-    // const fetchProfile = async () => {
-    //   try {
-    //     const profile = await API.graphql(graphqlOperation(listProfileV3s));
-    //     const profileData = profile.data.listProfileV3s.items;
-    //     console.log('profile data', profileData);
-    //     setProfile(profileData);
-    //   }
-    //   catch(error) {
-    //     console.log('ERROR on getting profiles', error);
-    //   }
-    // }
         
     let j = 50;
-  //  console.log("profile: ", profile/*[0].profilePic*/);
     return(
         <div className="tweetBox">
             <form>
@@ -156,22 +143,15 @@ function TweetBox() {
             <div id="49"></div>
             <div id="50"></div>   
             <div>
-            {postsWithProfile.map(post => (
-                     <Post avatar={post.profilePic}
-                              displayName={post.profileID}
-                              username={"@" + post.profileID}
-                              id={post.profileID}
-                              text={post.post} 
+            {               
+            postsWithProfile.map((element, index) => (
+                     <Post avatar={postsToAvatar[index]}
+                              displayName={postsToUsername[index]}
+                              username={postsToUsername[index]}
+                              id={element.profileID}
+                              text={element.post} 
                               image={"https://th.bing.com/th/id/OIP.2I5m3mAT8uztVwT80eKHggHaEK?w=272&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"}/>                
               ))}
-              {/* {posts.map(post => (
-                     <Post avatar={profile[3].profilePic}
-                              displayName={profile[3].name}
-                              username={"@" + profile[3].name}
-                              id={post.id}
-                              text={post.post}
-                              image={"https://th.bing.com/th/id/OIP.2I5m3mAT8uztVwT80eKHggHaEK?w=272&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"}/>                
-              ))} */}
             </div>
         </div>
        

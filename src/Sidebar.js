@@ -20,8 +20,6 @@ function Sidebar() {
             <SidebarOption id="second" Icon={SearchIcon} text="Explore"/>
             <SidebarOption id="third" Icon={NotificationsNoneIcon} text="Notifications"/>
             <SidebarOption id="fourth" Icon={MailOutlineIcon} text="Messages"/>
-            {/* <SidebarOption id="fifth" Icon={BookmarkBorderIcon} text="Bookmarks"/>
-            <SidebarOption id="sixth" Icon={ListAltIcon} text="Lists"/> */}
             <SidebarOption id="seventh" Icon={PermIdentityIcon} text="Profile"/>
             <SidebarOption id="fifth" Icon={Settings} text="Settings"/>
             <SidebarOption id="eigth" Icon={MoreHorizIcon} text="More"/>
